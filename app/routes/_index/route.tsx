@@ -6,36 +6,35 @@ import { MenuItem, MenuPropsPanel } from '~/components/menu-props-panel/menu-pro
 export const loader = ({ request }: LoaderFunctionArgs) => {
     return { canonicalUrl: getUrlOriginWithPath(request.url) };
 };
+const menuItems: MenuItem[] = [
+    {
+        label: 'File',
+        subMenu: [
+            { label: 'New Tab', shortcut: '⌘ T' },
+            { label: 'New Window', shortcut: '⌘ N' },
+            { label: 'New Incognito Window', disabled: true },
+            { label: 'Print…', shortcut: '⌘ P' },
+        ],
+    },
+    {
+        label: 'Edit',
+        subMenu: [
+            { label: 'Undo', shortcut: '⌘ Z' },
+            {
+                label: 'Redo',
+                shortcut: '⇧ ⌘ Z',
+            },
+        ],
+    },
+    {
+        label: 'View',
+    },
+    {
+        label: 'daniel',
+    },
+];
 
 export default function HomePage() {
-    const menuItems: MenuItem[] = [
-        {
-            label: 'File',
-            subMenu: [
-                { label: 'New Tab', shortcut: '⌘ T' },
-                { label: 'New Window', shortcut: '⌘ N' },
-                { label: 'New Incognito Window', disabled: true },
-                { label: 'Print…', shortcut: '⌘ P' },
-            ],
-        },
-        {
-            label: 'Edit',
-            subMenu: [
-                { label: 'Undo', shortcut: '⌘ Z' },
-                {
-                    label: 'Redo',
-                    shortcut: '⇧ ⌘ Z',
-                },
-            ],
-        },
-        {
-            label: 'View',
-        },
-        {
-            label: 'daniel',
-        },
-    ];
-
     return <MenuPropsPanel menuItems={menuItems} />;
 }
 
