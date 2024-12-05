@@ -8,13 +8,7 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
 };
 const menuItems: MenuItem[] = [
     {
-        label: 'File',
-        subMenu: [
-            { label: 'New Tab', shortcut: '⌘ T' },
-            { label: 'New Window', shortcut: '⌘ N' },
-            { label: 'New Incognito Window', disabled: true },
-            { label: 'Print…', shortcut: '⌘ P' },
-        ],
+        label: 'View',
     },
     {
         label: 'Edit',
@@ -27,7 +21,14 @@ const menuItems: MenuItem[] = [
         ],
     },
     {
-        label: 'View',
+        label: 'File',
+        subMenu: [
+            { label: 'New Tab', shortcut: '⌘ T' },
+            { label: 'New Window', shortcut: '⌘ N' },
+            { label: 'New Incognito Window', disabled: true },
+            { label: 'Print…', shortcut: '⌘ P' },
+            { label: 'New File', shortcut: '⌘ P' },
+        ],
     },
     {
         label: 'daniel',

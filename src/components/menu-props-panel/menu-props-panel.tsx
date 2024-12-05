@@ -1,4 +1,6 @@
 import { Content, Item, Menu, Portal, Root, Trigger } from '@radix-ui/react-menubar';
+import styles from './menu-props-panel.module.scss';
+import classNames from 'classnames';
 
 export interface MenuPropsPanelProps {
     className?: string;
@@ -19,10 +21,10 @@ export interface MenuItem {
  */
 export const MenuPropsPanel = ({ className, menuItems }: MenuPropsPanelProps) => {
     return (
-        <Root className={className}>
+        <Root className={classNames(className, styles.root)}>
             {menuItems.map((item, index) => (
                 <Menu key={index}>
-                    <Trigger>{item.label}</Trigger>
+                    <Trigger className={styles.trigger}>{item.label}</Trigger>
                     {item.subMenu && <MenuItem {...item} />}
                 </Menu>
             ))}
