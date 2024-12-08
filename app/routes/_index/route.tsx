@@ -1,7 +1,7 @@
 import styles from './_index.module.scss';
 import { LinksFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { getUrlOriginWithPath } from '~/utils';
-import { MenuItem, MenuPropsPanel } from '~/components/menu-props-panel/menu-props-panel';
+import { MenuItem, Menu } from '~/components/menu-props-panel/menu-props-panel';
 
 export const loader = ({ request }: LoaderFunctionArgs) => {
     return { canonicalUrl: getUrlOriginWithPath(request.url) };
@@ -9,10 +9,10 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
 
 export default function HomePage() {
     return (
-        <MenuPropsPanel>
+        <Menu>
             <MenuItem label="Homasdasdasde" key={1} to="s" />
             <MenuItem label="Home" key={2} to="sd" />
-        </MenuPropsPanel>
+        </Menu>
     );
 }
 
