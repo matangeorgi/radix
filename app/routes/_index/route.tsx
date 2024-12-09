@@ -9,7 +9,7 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
 
 export default function HomePage() {
     return (
-        <Menu>
+        <Menu orientation="horizontal">
             <MenuItem label="Homasdasdasde" key={1} to="s" />
             <MenuItem label="Home" key={2} to="sd" />
         </Menu>

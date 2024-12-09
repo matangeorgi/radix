@@ -1,7 +1,7 @@
-import { Item, Root } from '@radix-ui/react-navigation-menu';
+import { Item, NavigationMenuProps, Root } from '@radix-ui/react-navigation-menu';
 import { NavLink } from '@remix-run/react';
 
-export interface MenuPropsPanelProps {
+export interface MenuPropsPanelProps extends NavigationMenuProps {
     className?: string;
     children?: React.ReactNode;
 }
@@ -9,7 +9,12 @@ export interface MenuPropsPanelProps {
 export interface MenuItem {
     label: string;
     className?: string;
+    /** @format link */
     to: string;
+    subtitle?: string;
+    backgroundSrc?: string;
+    iconAlignment?: 'left' | 'right';
+    icon?: React.ReactNode;
 }
 
 /**
